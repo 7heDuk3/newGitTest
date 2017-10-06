@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1507217308 source:c:\users\mike\documents\c++\dugga1_16\main.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	"Date.h"
+	"Boosted_Array.h"
+
+1507193445 c:\users\mike\documents\c++\dugga1_16\include\date.h
+
+1507226148 source:c:\users\mike\documents\c++\dugga1_16\src\date.cpp
+	"Date.h"
+	<iostream>
+
+1507227562 source:c:\users\mike\documents\c++\dugga1_16\src\boosted_array.cpp
+	"Boosted_Array.h"
+	<iostream>
+
+1507218501 c:\users\mike\documents\c++\dugga1_16\include\boosted_array.h
+	"Date.h"
+	<string>
+
