@@ -145,18 +145,25 @@ int Date::operator-(const Date& d) const
     if(tmp1 < tmp2)
     {
         std::cout << "op- 2" << std::endl;
-        while(tmp1++ != tmp2)
+        while(tmp1 != tmp2)
+        {
             counter++;
 
+            tmp1++;
+        }
+
         std::cout << "op- 3" << std::endl;
-        counter *= -1;
+        //counter *= -1;
     }
     else
     {
         std::cout << "op- 4" << std::endl;
-        while(tmp1 != tmp2++)
+        while(tmp1 != tmp2)
+        {
             counter++;
 
+            tmp2++;
+        }
     }
 
     return counter;

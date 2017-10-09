@@ -16,7 +16,7 @@ class Boosted_Array
         Date end() const;
         void resize_to(Date d);
         std::string& operator[](const Date d) const;
-        Boosted_Array operator+(const Boosted_Array& ba) const;
+        Boosted_Array operator+(const Boosted_Array& ba);
 
     protected:
 

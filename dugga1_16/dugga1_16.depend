@@ -20,3 +20,24 @@
 	"Date.h"
 	<string>
 
+1507315423 source:c:\users\mike\documents\c++\newgittest\dugga1_16\main.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	"Date.h"
+	"Boosted_Array.h"
+
+1507193445 c:\users\mike\documents\c++\newgittest\dugga1_16\include\date.h
+
+1507322399 c:\users\mike\documents\c++\newgittest\dugga1_16\include\boosted_array.h
+	"Date.h"
+	<string>
+
+1507316535 source:c:\users\mike\documents\c++\newgittest\dugga1_16\src\date.cpp
+	"Date.h"
+	<iostream>
+
+1507322606 source:c:\users\mike\documents\c++\newgittest\dugga1_16\src\boosted_array.cpp
+	"Boosted_Array.h"
+	<iostream>
+

@@ -77,45 +77,44 @@ Date Boosted_Array::end() const
 
 void Boosted_Array::resize_to(Date d)
 {
-    int newSize = this->begin() - d;
+    int newSize = d - this->begin();
 
     //Date *newDate = new Date[newSize];
     std::string *newName = new std::string[newSize];
 
-    for(int i = 0; i < newSize; i++)
+    for(int i = 0; i < this->nDates; i++)
     {
         //newDate[i] = this->date[i];
         newName[i] = this->name[i];
     }
 
-
     delete[] this->name;
 
+    this->nDates = newSize;
     this->name = newName;
 }
 
 std::string& Boosted_Array::operator[](const Date d) const
 {
-    Date tmp = this->date;
-    std::string error = "ERROR";
+    Date tmp(this->date);
+    //std::string error = "ERROR";
 
-    int found = 0, i;
+    bool found = false;
+    int i = 0;
 
-    for(i = 0; i < this->nDates && !found; i++)
+    for(i; (i < this->nDates) && !found; i++)
     {
         if(tmp == d)
-            found = 1;
+            found = true;
 
         tmp++;
     }
 
-    if(found)
-        return this->name[i];
-    else
-        return error;
+
+        return *(this->name + i);
 }
 
-Boosted_Array Boosted_Array::operator+(const Boosted_Array& ba) const
+Boosted_Array Boosted_Array::operator+(const Boosted_Array& ba)
 {
     int newSize;
 
@@ -131,41 +130,55 @@ Boosted_Array Boosted_Array::operator+(const Boosted_Array& ba) const
 
     std::cout << " 4";
 
-    if(this->end() > ba.end()) {
+    if(this->end() > ba.end())
+    {
         newBa.nDates = this->end() - newBa.date;
 
+        this->resize_to(this->end());
     }
-    else {
+    else
+    {
         std::cout << "-yes";
         newBa.nDates = ba.end() - newBa.date;
+        this->resize_to(ba.end());
     }
 
     std::cout << " HEJ";
 
-    std::string *newName = new std::string[newBa.nDates];
+
+
+    //std::string *newName = new std::string[newBa.nDates];
 
     tmp = newBa.date;
 
-    /// HAj
-    std::string hej = ba[Date(3,6,2016)];
+//    for(tmp; tmp != newBa.end(); tmp++)
+//    {
+//        std::cout << std::endl << newBa[tmp];
+//    }
 
-    std::cout << std::endl << hej;
+    /// HAj
+    //std::string hej = ba[Date(3,6,2016)];
+
+    //std::cout << std::endl << hej;
     //Boosted_Array tmpLhs(*this);
 
     std::cout << std::endl << newBa.nDates;
 
-    for(int i = 0; i < newBa.nDates; i++)
-    {
-        newName[i] = (*this)[tmp] + " " + ba[tmp];
+    std::string str1 = newBa[tmp];
+    std::string str2;
 
-        std::cout << std::endl << newName[i];
+//    for(int i = 0; i < newBa.nDates; i++)
+//    {
+//        //newName[i] = (*this)[tmp] + " " + ba[tmp];
+//
+//        str1 = (*this)[tmp];
+//
+//        //std::cout << std::endl << newName[i];
+//
+//        if(i < newBa.nDates - 1)
+//            tmp++;
+//    }
 
-        if(i < newBa.nDates - 1)
-            tmp++;
-    }
-
-
-    newBa.name = newName;
 
     return newBa;
 }

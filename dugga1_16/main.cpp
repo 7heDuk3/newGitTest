@@ -13,7 +13,7 @@ ostream& operator<<(ostream& os, const Boosted_Array& ba);
 int main()
 {
     Boosted_Array ba1(Date(1,6,2016), 5, "hej");
-    Boosted_Array ba2(Date(3,6,2016), 5, "då");
+    Boosted_Array ba2(Date(3,6,2016), 5, "da");
 
     Boosted_Array res = ba1 + ba2;
 
